@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private Toolbar mToolbar;
+    private android.support.v7.widget.Toolbar mToolbar;
     private FirebaseAuth mAuth;
 
 
@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-
+        mToolbar=  findViewById(R.id.main_page_bar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("PingMe");
 
 
 
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser==null){
             Intent startPageIntent = new Intent(MainActivity.this,StartActivity.class);
-            startPageIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startPageIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK); //doesn't allow user to go from splashscreen to main activity unless it is logged in
             startActivity(startPageIntent);
             finish();
         }

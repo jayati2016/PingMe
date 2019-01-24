@@ -14,8 +14,8 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        newUser= (Button)findViewById(R.id.btn1);
-        alreadyUser=(Button)findViewById(R.id.btn2);
+        newUser= findViewById(R.id.btn1);
+        alreadyUser=findViewById(R.id.btn2);
 
         newUser.setOnClickListener(new View.OnClickListener() {
             @Override

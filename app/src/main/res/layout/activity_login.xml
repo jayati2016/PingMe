@@ -7,6 +7,12 @@
     tools:context=".LoginActivity"
     android:background="#FFCCCC">
 
+    <include
+        layout="@layout/app_bar_layout"
+        android:id="@+id/login_page_bar">
+
+    </include>
+
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
